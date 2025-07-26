@@ -38,17 +38,16 @@ chatForm.addEventListener("submit", async (e) => {
   // Show loading message
   chatWindow.innerHTML += `<div class="msg ai">Thinking...</div>`;
 
-  // Send request to OpenAI API
+  // Send request to Cloudflare Worker API
   try {
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+    // Replace with your actual Cloudflare Worker endpoint URL
+    const response = await fetch("https://loreal-chatbot.lukelangan6.workers.dev", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${OPENAI_API_KEY}`,
       },
       body: JSON.stringify({
-        model: "gpt-4o",
-        messages: messages, // Use messages array
+        messages: messages, // Send messages array to Worker
       }),
     });
 
