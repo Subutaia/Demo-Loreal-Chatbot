@@ -8,7 +8,8 @@
 /* —— body + fonts —— */
 body {
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
-  color: #333;
+  color: #000; /* L'Oréal Black */
+  background: #f5f5f5; /* Accent Gray */
   display: flex;
   justify-content: center;
 }
@@ -16,6 +17,8 @@ body {
 .page-wrapper {
   width: 90%;
   max-width: 900px;
+  background: #fff; /* White */
+  border-radius: 12px;
 }
 
 /* header */
@@ -26,8 +29,14 @@ body {
 
 .site-title {
   font-size: 22px;
-  font-weight: 500;
+  font-weight: 700;
   margin-bottom: 10px;
+  color: #c7a96b; /* L'Oréal Gold */
+}
+
+.logo {
+  max-width: 160px;
+  margin-bottom: 18px;
 }
 
 /* chat window */
@@ -37,27 +46,47 @@ body {
 
 .chat-window {
   height: 360px;
-  border: 1px solid #000;
   padding: 20px;
   font-size: 18px;
   line-height: 1.5;
   overflow-y: auto;
-  background: #fafafa;
+  background: #fafafa; /* Light background */
   white-space: pre-line;
+  border-radius: 8px;
 }
 
 /* messages */
 .msg {
   margin-bottom: 14px;
   line-height: 1.5;
+  max-width: 70%;
+  padding: 8px 14px;
+  border-radius: 8px;
+  display: block;
+  clear: both;
+  word-break: break-word;
 }
 
 .msg.user {
-  color: #000;
+  color: #000; /* Black text */
+  background: #e6d7b9; /* Light Gold bubble */
+  float: left;
+  text-align: left;
 }
 
 .msg.ai {
-  color: #666666;
+  color: #666666; /* Warm Gray */
+  background: #fff; /* White bubble */
+  float: right;
+  text-align: right;
+  border: 1px solid #c7a96b; /* Gold border */
+}
+
+/* Clear floats after each message */
+.chat-window::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 /* input row */
@@ -70,18 +99,21 @@ body {
 .chat-form input {
   flex: 1;
   padding: 12px;
-  border: 1px solid #ccc;
   font-size: 18px;
+  border-radius: 8px;
+  background: #fff;
+  color: #000; /* Black text */
+  border: 1px solid #c7a96b; /* Gold border for focus only */
 }
 
 .chat-form input:focus {
-  outline: 2px solid #000;
+  outline: 2px solid #c7a96b;
   outline-offset: 2px;
 }
 
 .chat-form button {
   font-size: 18px;
-  background: #000;
+  background: #c7a96b; /* Gold button */
   color: #fff;
   border: none;
   padding: 12px;
@@ -92,6 +124,7 @@ body {
   justify-content: center;
   cursor: pointer;
   transition: background 0.3s;
+  border-radius: 8px;
 }
 
 .chat-form button .material-icons {
@@ -99,11 +132,12 @@ body {
 }
 
 .chat-form button:hover {
-  background: #666666;
+  background: #000; /* Black on hover */
+  color: #c7a96b;
 }
 
 .chat-form button:focus {
-  outline: 2px solid #000;
+  outline: 2px solid #c7a96b;
   outline-offset: 2px;
 }
 
@@ -125,7 +159,10 @@ body {
   margin: 60px 0 40px;
   text-align: center;
   font-size: 14px;
-  color: #666;
+  color: #666666; /* Warm Gray */
+  padding-top: 18px;
+  background: #fafafa;
+  border-radius: 0 0 12px 12px;
 }
 
 .site-footer nav {
@@ -134,10 +171,11 @@ body {
 
 .site-footer a {
   margin: 0 8px;
-  color: #000;
+  color: #c7a96b; /* Gold links */
   text-decoration: none;
+  font-weight: 500;
 }
 
 .site-footer a:hover {
-  color: #666666;
+  color: #000; /* Black on hover */
 }
